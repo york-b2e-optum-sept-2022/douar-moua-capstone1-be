@@ -31,7 +31,7 @@ public class Survey {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title = "Survey: " + title;
     }
 
     public List<Question> getSurveyQuestions() {
