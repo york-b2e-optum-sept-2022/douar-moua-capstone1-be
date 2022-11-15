@@ -4,16 +4,9 @@ Content-Type: application/json
 
 {
   "surveyId": 1,
-  "prompt": "What is 1+1?",
-  "textAnswer": "2"
+  "prompt": "True or False: I is a vowel?",
+  "textAnswer": "True"
 }
 
 ###
-POST http://localhost:8080/api/question
-Content-Type: application/json
-
-{
-  "surveyId": 1,
-  "prompt": "True or False: I is a vowel",
-  "booleanAnswer": true
-}
+GET http://localhost:8080/api/question?surveyId=1

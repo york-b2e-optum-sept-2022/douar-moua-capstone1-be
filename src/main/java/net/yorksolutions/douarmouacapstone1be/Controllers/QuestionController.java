@@ -20,4 +20,9 @@ public class QuestionController {
     public Question createQuestion(@RequestBody NewQuestionRequestDTO requestDTO){
         return this.questionService.createQuestion(requestDTO);
     }
+
+    @GetMapping
+    public Iterable<Question> getSurveyQuestions(@RequestParam Long surveyId){
+        return this.questionService.getSurveyQuestions(surveyId);
+    }
 }

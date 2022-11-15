@@ -4,5 +4,5 @@ public class NewQuestionRequestDTO {
     public Long surveyId;
     public String prompt;
     public String textAnswer;
-    public Boolean booleanAnswer;
+//    public Boolean booleanAnswer;
 }

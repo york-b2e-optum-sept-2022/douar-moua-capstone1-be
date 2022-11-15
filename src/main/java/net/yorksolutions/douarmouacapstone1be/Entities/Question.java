@@ -13,16 +13,16 @@ public class Question {
 
     String prompt;
     String textAnswer;
-    Boolean booleanAnswer;
+//    Boolean booleanAnswer;
 
     @ManyToOne
-    Survey survey;
+    Survey surveyOwner;
 
-    public Question(String prompt, String textAnswer, Boolean booleanAnswer, Survey survey) {
+    public Question(String prompt, String textAnswer, Survey surveyOwner) {
         this.prompt = prompt;
         this.textAnswer = textAnswer;
-        this.booleanAnswer = booleanAnswer;
-        this.survey = survey;
+//        this.booleanAnswer = booleanAnswer;
+        this.surveyOwner = surveyOwner;
     }
 
     public Long getId() {
@@ -45,15 +45,15 @@ public class Question {
         this.textAnswer = textAnswer;
     }
 
-    public Boolean getBooleanAnswer() {
-        return booleanAnswer;
-    }
+//    public Boolean getBooleanAnswer() {
+//        return booleanAnswer;
+//    }
 
-    public void setBooleanAnswer(Boolean booleanAnswer) {
-        this.booleanAnswer = booleanAnswer;
-    }
+//    public void setBooleanAnswer(Boolean booleanAnswer) {
+//        this.booleanAnswer = booleanAnswer;
+//    }
 
-    public Survey getSurvey() {
-        return survey;
+    public Survey getSurveyOwner() {
+        return surveyOwner;
     }
 }

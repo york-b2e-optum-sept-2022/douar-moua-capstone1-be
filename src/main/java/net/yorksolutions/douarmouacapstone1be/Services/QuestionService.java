@@ -29,7 +29,15 @@ public class QuestionService {
         }
 
         return this.questionRepository.save(
-                new Question(requestDTO.prompt, requestDTO.textAnswer, requestDTO.booleanAnswer, surveyOptional.get())
+                new Question(requestDTO.prompt, requestDTO.textAnswer, surveyOptional.get())
         );
+    }
+
+    public Iterable<Question> getSurveyQuestions(Long surveyId){
+        Optional<Survey> surveyOptional = this.surveyRepository.findById(surveyId);
+        if (surveyOptional.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return this.questionRepository.findAllBySurveyOwner(surveyOptional.get());
     }
 }
