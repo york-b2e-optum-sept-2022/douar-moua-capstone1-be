@@ -19,7 +19,7 @@ public class Survey {
 
     public Survey(String title, List<Question> surveyQuestions) {
         this.title = title;
-        this.surveyQuestions = surveyQuestions;
+        this.surveyQuestions = null;
     }
 
     public Long getId() {

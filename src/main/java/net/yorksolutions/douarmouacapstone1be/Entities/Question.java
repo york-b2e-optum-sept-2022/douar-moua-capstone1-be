@@ -15,14 +15,14 @@ public class Question {
     String textAnswer;
     Boolean booleanAnswer;
 
-//    @ManyToOne
-//            @JoinColumn(name = "survey_id")
-//    Survey survey;
+    @ManyToOne
+    Survey survey;
 
-    public Question(String prompt, String textAnswer, Boolean booleanAnswer) {
+    public Question(String prompt, String textAnswer, Boolean booleanAnswer, Survey survey) {
         this.prompt = prompt;
         this.textAnswer = textAnswer;
         this.booleanAnswer = booleanAnswer;
+        this.survey = survey;
     }
 
     public Long getId() {
@@ -51,5 +51,9 @@ public class Question {
 
     public void setBooleanAnswer(Boolean booleanAnswer) {
         this.booleanAnswer = booleanAnswer;
+    }
+
+    public Survey getSurvey() {
+        return survey;
     }
 }
