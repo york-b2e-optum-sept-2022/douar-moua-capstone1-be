@@ -3,9 +3,9 @@ POST http://localhost:8080/api/question
 Content-Type: application/json
 
 {
-  "surveyId": 1,
-  "prompt": "True or False: I is a vowel?",
-  "answer": "True"
+  "surveyId": 4,
+  "prompt": "True or False: F is a vowel?",
+  "answer": "False"
 }
 
 ###

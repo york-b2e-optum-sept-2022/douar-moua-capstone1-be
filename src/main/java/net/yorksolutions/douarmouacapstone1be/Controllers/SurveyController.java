@@ -20,6 +20,11 @@ public class SurveyController {
         return this.surveyService.createSurvey(newSurvey);
     }
 
+    @GetMapping("/all-survey")
+    public Iterable<Survey> getAllSurvey(){
+        return this.surveyService.getAllSurveys();
+    }
+
     @GetMapping
     public Survey getSurvey(@RequestParam Long surveyId){
         return this.surveyService.getSurvey(surveyId);

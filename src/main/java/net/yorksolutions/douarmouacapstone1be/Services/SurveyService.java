@@ -26,7 +26,10 @@ public class SurveyService {
         if (surveyOptional.isEmpty()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-
         return surveyOptional.get();
+    }
+
+    public Iterable<Survey> getAllSurveys(){
+        return this.surveyRepository.findAll();
     }
 }
