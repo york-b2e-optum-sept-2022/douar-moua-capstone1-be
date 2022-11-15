@@ -1,9 +1,9 @@
 package net.yorksolutions.douarmouacapstone1be.Controllers;
 
+import net.yorksolutions.douarmouacapstone1be.DTOs.NewQuestionRequestDTO;
+import net.yorksolutions.douarmouacapstone1be.Entities.Question;
 import net.yorksolutions.douarmouacapstone1be.Services.QuestionService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/question")
@@ -14,5 +14,10 @@ public class QuestionController {
 
     public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
+    }
+
+    @PostMapping
+    public Question createQuestion(@RequestBody NewQuestionRequestDTO requestDTO){
+        return this.questionService.createQuestion(requestDTO);
     }
 }
