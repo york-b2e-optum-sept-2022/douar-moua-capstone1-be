@@ -34,7 +34,7 @@ public class Question {
     }
 
     public void setPrompt(String prompt) {
-        this.prompt = prompt;
+        this.prompt = "Prompt: " + prompt;
     }
 
     public String getTextAnswer() {
