@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "surveyId": 1,
   "prompt": "True or False: I is a vowel?",
-  "textAnswer": "True"
+  "answer": "True"
 }
 
 ###

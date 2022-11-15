@@ -12,16 +12,14 @@ public class Question {
     Long id;
 
     String prompt;
-    String textAnswer;
-//    Boolean booleanAnswer;
+    String answer;
 
     @ManyToOne
     Survey surveyOwner;
 
-    public Question(String prompt, String textAnswer, Survey surveyOwner) {
+    public Question(String prompt, String answer, Survey surveyOwner) {
         this.prompt = prompt;
-        this.textAnswer = textAnswer;
-//        this.booleanAnswer = booleanAnswer;
+        this.answer = answer;
         this.surveyOwner = surveyOwner;
     }
 
@@ -37,21 +35,13 @@ public class Question {
         this.prompt = "Prompt: " + prompt;
     }
 
-    public String getTextAnswer() {
-        return textAnswer;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setTextAnswer(String textAnswer) {
-        this.textAnswer = textAnswer;
+    public void setAnswer(String textAnswer) {
+        this.answer = textAnswer;
     }
-
-//    public Boolean getBooleanAnswer() {
-//        return booleanAnswer;
-//    }
-
-//    public void setBooleanAnswer(Boolean booleanAnswer) {
-//        this.booleanAnswer = booleanAnswer;
-//    }
 
     public Survey getSurveyOwner() {
         return surveyOwner;
