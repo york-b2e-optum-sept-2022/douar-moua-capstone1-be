@@ -20,4 +20,9 @@ public class SurveyController {
         return this.surveyService.createSurvey(newSurvey);
     }
 
+    @GetMapping
+    public Survey getSurvey(@RequestParam Long surveyId){
+        return this.surveyService.getSurvey(surveyId);
+    }
+
 }

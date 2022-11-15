@@ -5,3 +5,6 @@ Content-Type: application/json
 {
   "title": "test"
 }
+
+###
+GET http://localhost:8080/api/survey?surveyId=1
