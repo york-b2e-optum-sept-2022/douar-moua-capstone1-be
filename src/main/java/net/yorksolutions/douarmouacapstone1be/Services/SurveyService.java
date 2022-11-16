@@ -32,4 +32,8 @@ public class SurveyService {
     public Iterable<Survey> getAllSurveys(){
         return this.surveyRepository.findAll();
     }
+
+    public void deleteSurvey(Long surveyId){
+        this.surveyRepository.deleteById(surveyId);
+    }
 }

@@ -11,3 +11,6 @@ GET http://localhost:8080/api/survey?surveyId=1
 
 ###
 GET http://localhost:8080/api/survey/all-survey
+
+###
+DELETE http://localhost:8080/api/survey?surveyId=15

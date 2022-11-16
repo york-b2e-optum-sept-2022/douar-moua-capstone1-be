@@ -30,4 +30,10 @@ public class SurveyController {
         return this.surveyService.getSurvey(surveyId);
     }
 
+    @DeleteMapping
+    public void deleteSurvey(Long surveyId){
+        this.surveyService.deleteSurvey(surveyId);
+    }
+
+
 }
