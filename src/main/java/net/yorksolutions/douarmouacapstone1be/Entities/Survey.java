@@ -31,7 +31,7 @@ public class Survey {
     }
 
     public void setTitle(String title) {
-        this.title = "Survey: " + title;
+        this.title = title;
     }
 
     public List<Question> getSurveyQuestions() {
@@ -40,5 +40,13 @@ public class Survey {
 
     public void setSurveyQuestions(List<Question> surveyQuestions) {
         this.surveyQuestions = surveyQuestions;
+    }
+
+    @Override
+    public String toString() {
+        return "Survey{" +
+                "title='" + title + '\'' +
+                ", surveyQuestions=" + surveyQuestions +
+                '}';
     }
 }

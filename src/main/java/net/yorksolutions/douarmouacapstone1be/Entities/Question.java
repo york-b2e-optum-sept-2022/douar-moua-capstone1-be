@@ -32,7 +32,7 @@ public class Question {
     }
 
     public void setPrompt(String prompt) {
-        this.prompt = "Prompt: " + prompt;
+        this.prompt = prompt;
     }
 
     public String getAnswer() {
