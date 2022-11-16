@@ -1,5 +1,6 @@
 package net.yorksolutions.douarmouacapstone1be.Controllers;
 
+import net.yorksolutions.douarmouacapstone1be.DTOs.UpdateSurveyRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.Entities.Survey;
 import net.yorksolutions.douarmouacapstone1be.Services.SurveyService;
 import org.springframework.web.bind.annotation.*;
@@ -35,5 +36,8 @@ public class SurveyController {
         this.surveyService.deleteSurvey(surveyId);
     }
 
-
+    @PutMapping
+    public Survey updateSurvey(@RequestBody UpdateSurveyRequestDTO requestDTO){
+        return this.surveyService.updateSurvey(requestDTO);
+    }
 }

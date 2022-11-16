@@ -1,5 +1,6 @@
 package net.yorksolutions.douarmouacapstone1be.Services;
 
+import net.yorksolutions.douarmouacapstone1be.DTOs.UpdateSurveyRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.Entities.Survey;
 import net.yorksolutions.douarmouacapstone1be.Repositories.SurveyRepository;
 import org.springframework.http.HttpStatus;
@@ -35,5 +36,17 @@ public class SurveyService {
 
     public void deleteSurvey(Long surveyId){
         this.surveyRepository.deleteById(surveyId);
+    }
+
+    public Survey updateSurvey(UpdateSurveyRequestDTO requestDTO){
+        Optional<Survey> surveyOptional = this.surveyRepository.findById(requestDTO.id);
+        if (surveyOptional.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        Survey updateSurvey = surveyOptional.get();
+        updateSurvey.setTitle(requestDTO.title);
+
+        return this.surveyRepository.save(updateSurvey);
     }
 }
