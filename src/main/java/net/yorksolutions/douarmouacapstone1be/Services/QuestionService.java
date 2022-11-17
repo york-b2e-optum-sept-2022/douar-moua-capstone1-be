@@ -33,6 +33,22 @@ public class QuestionService {
         );
     }
 
+    public Iterable<Question> newQuestionList (Iterable<Question> questions, Long surveyId){
+        Optional<Survey> surveyOptional = this.surveyRepository.findById(surveyId);
+        if (surveyOptional.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        Survey newSurvey = surveyOptional.get();
+
+        Iterable<Question> newQuestions = questions;
+        for (Question question: newQuestions){
+            question.setSurveyOwner(newSurvey);
+        }
+
+        return this.questionRepository.saveAll(newQuestions);
+    }
+
     public Iterable<Question> getSurveyQuestions(Long surveyId){
         Optional<Survey> surveyOptional = this.surveyRepository.findById(surveyId);
         if (surveyOptional.isEmpty()){

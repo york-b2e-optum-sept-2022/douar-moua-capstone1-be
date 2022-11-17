@@ -46,4 +46,8 @@ public class Question {
     public Survey getSurveyOwner() {
         return surveyOwner;
     }
+
+    public void setSurveyOwner(Survey surveyOwner) {
+        this.surveyOwner = surveyOwner;
+    }
 }

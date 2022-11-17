@@ -9,4 +9,22 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:8080/api/question/questions?surveyId=1668718867164
+Content-Type: application/json
+
+[
+  {
+    "surveyId": 1668718867164,
+    "prompt": "survey title 7",
+    "answer": "survey title 7"
+  },
+  {
+    "surveyId": 1668718867164,
+    "prompt": "survey title 8",
+    "answer": "survey title 8"
+  }
+]
+
+
+###
 GET http://localhost:8080/api/question?surveyId=1668713318319

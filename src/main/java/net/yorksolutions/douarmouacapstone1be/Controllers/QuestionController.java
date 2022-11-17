@@ -21,6 +21,11 @@ public class QuestionController {
         return this.questionService.createQuestion(requestDTO);
     }
 
+    @PostMapping("/questions")
+    public Iterable<Question> createNewSurveyQuestions(@RequestBody Iterable<Question> questions, @RequestParam Long surveyId){
+        return this.questionService.newQuestionList(questions, surveyId);
+    }
+
     @GetMapping
     public Iterable<Question> getSurveyQuestions(@RequestParam Long surveyId){
         return this.questionService.getSurveyQuestions(surveyId);
