@@ -3,10 +3,10 @@ POST http://localhost:8080/api/question
 Content-Type: application/json
 
 {
-  "surveyId": 7,
-  "prompt": "test",
-  "answer": "test"
+  "surveyId": 1668713336802,
+  "prompt": "True or False: I is a vowel?",
+  "answer": "True"
 }
 
 ###
-GET http://localhost:8080/api/question?surveyId=1
+GET http://localhost:8080/api/question?surveyId=1668713318319
