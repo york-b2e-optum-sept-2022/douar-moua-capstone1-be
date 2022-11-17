@@ -1,5 +1,6 @@
 package net.yorksolutions.douarmouacapstone1be.Services;
 
+import net.yorksolutions.douarmouacapstone1be.DTOs.NewSurveyRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.DTOs.UpdateSurveyRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.Entities.Survey;
 import net.yorksolutions.douarmouacapstone1be.Repositories.SurveyRepository;
@@ -18,8 +19,15 @@ public class SurveyService {
         this.surveyRepository = surveyRepository;
     }
 
-    public Survey createSurvey(Survey newSurvey){
-        return this.surveyRepository.save(newSurvey);
+    public Survey createSurvey(NewSurveyRequestDTO requestDTO){
+        try {
+            return this.surveyRepository.save(
+                    new Survey(requestDTO.id, requestDTO.title, requestDTO.surveyQuestions)
+            );
+        } catch (RuntimeException exception) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT);
+        }
+
     }
 
     public Survey getSurvey(Long surveyId){

@@ -9,7 +9,8 @@ public class Survey {
     public Survey() {}
 
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+//    @GeneratedValue (strategy = GenerationType.SEQUENCE)
+    @Column (unique = true)
     Long id;
 
     String title;
@@ -17,13 +18,18 @@ public class Survey {
     @OneToMany
     List<Question> surveyQuestions;
 
-    public Survey(String title, List<Question> surveyQuestions) {
+    public Survey(Long id, String title, List<Question> surveyQuestions) {
+        this.id = id;
         this.title = title;
         this.surveyQuestions = null;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {

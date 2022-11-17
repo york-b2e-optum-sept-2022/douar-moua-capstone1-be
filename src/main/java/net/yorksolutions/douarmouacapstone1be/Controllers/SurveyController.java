@@ -1,5 +1,6 @@
 package net.yorksolutions.douarmouacapstone1be.Controllers;
 
+import net.yorksolutions.douarmouacapstone1be.DTOs.NewSurveyRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.DTOs.UpdateSurveyRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.Entities.Survey;
 import net.yorksolutions.douarmouacapstone1be.Services.SurveyService;
@@ -17,8 +18,8 @@ public class SurveyController {
     }
 
     @PostMapping
-    public Survey createSurvey(@RequestBody Survey newSurvey){
-        return this.surveyService.createSurvey(newSurvey);
+    public Survey createSurvey(@RequestBody NewSurveyRequestDTO requestDTO){
+        return this.surveyService.createSurvey(requestDTO);
     }
 
     @GetMapping("/all-survey")
