@@ -30,4 +30,9 @@ public class QuestionController {
     public Iterable<Question> getSurveyQuestions(@RequestParam Long surveyId){
         return this.questionService.getSurveyQuestions(surveyId);
     }
+
+    @DeleteMapping
+    public void deleteQuestion(@RequestParam Long questionId){
+        this.questionService.deleteQuestion(questionId);
+    }
 }

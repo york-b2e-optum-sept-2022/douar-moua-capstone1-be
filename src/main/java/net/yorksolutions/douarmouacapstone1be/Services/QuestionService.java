@@ -56,4 +56,8 @@ public class QuestionService {
         }
         return this.questionRepository.findAllBySurveyOwner(surveyOptional.get());
     }
+
+    public void deleteQuestion (Long questionId){
+        this.questionRepository.deleteById(questionId);
+    }
 }

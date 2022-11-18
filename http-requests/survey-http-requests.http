@@ -21,6 +21,6 @@ PUT http://localhost:8080/api/survey
 Content-Type: application/json
 
 {
-  "id": 1668804371102,
+  "id": 24,
   "title": "vowels"
 }
