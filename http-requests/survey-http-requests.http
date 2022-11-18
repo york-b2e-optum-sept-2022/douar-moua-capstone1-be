@@ -3,7 +3,8 @@ POST http://localhost:8080/api/survey
 Content-Type: application/json
 
 {
-  "title": "history"
+  "id": 24,
+  "title": "delete test"
 }
 
 ###
@@ -13,13 +14,13 @@ GET http://localhost:8080/api/survey?surveyId=1668713318319
 GET http://localhost:8080/api/survey/all-survey
 
 ###
-DELETE http://localhost:8080/api/survey?surveyId=15
+DELETE http://localhost:8080/api/survey?surveyId=24
 
 ###
 PUT http://localhost:8080/api/survey
 Content-Type: application/json
 
 {
-  "id": 20,
-  "title": "new title"
+  "id": 1668804371102,
+  "title": "vowels"
 }

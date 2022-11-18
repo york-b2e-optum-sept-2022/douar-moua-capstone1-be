@@ -3,28 +3,31 @@ POST http://localhost:8080/api/question
 Content-Type: application/json
 
 {
-  "surveyId": 1668713336802,
+  "surveyId": 24,
   "prompt": "True or False: I is a vowel?",
-  "answer": "True"
+  "answer": "True",
+  "responseType": "boolean-response"
 }
 
 ###
-POST http://localhost:8080/api/question/questions?surveyId=1668718867164
+POST http://localhost:8080/api/question/questions?surveyId=24
 Content-Type: application/json
 
 [
   {
-    "surveyId": 1668718867164,
+    "surveyId": 24,
     "prompt": "survey title 7",
-    "answer": "survey title 7"
+    "answer": "survey title 7",
+    "responseType": "title test"
   },
   {
-    "surveyId": 1668718867164,
+    "surveyId": 24,
     "prompt": "survey title 8",
-    "answer": "survey title 8"
+    "answer": "survey title 8",
+    "responseType": "test"
   }
 ]
 
 
 ###
-GET http://localhost:8080/api/question?surveyId=1668713318319
+GET http://localhost:8080/api/question?surveyId=24

@@ -13,13 +13,16 @@ public class Question {
 
     String prompt;
     String answer;
+    String responseType;
 
     @ManyToOne
+//            @JoinColumn(name = "surveyOwner_id")
     Survey surveyOwner;
 
-    public Question(String prompt, String answer, Survey surveyOwner) {
+    public Question(String prompt, String answer, String responseType, Survey surveyOwner) {
         this.prompt = prompt;
         this.answer = answer;
+        this.responseType = responseType;
         this.surveyOwner = surveyOwner;
     }
 
@@ -43,8 +46,18 @@ public class Question {
         this.answer = textAnswer;
     }
 
+    public String getResponseType() {
+        return responseType;
+    }
+
+    public void setResponseType(String responseType) {
+        this.responseType = responseType;
+    }
+
     public Survey getSurveyOwner() {
         return surveyOwner;
+
+
     }
 
     public void setSurveyOwner(Survey surveyOwner) {

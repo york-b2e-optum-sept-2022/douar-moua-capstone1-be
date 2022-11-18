@@ -4,4 +4,5 @@ public class NewQuestionRequestDTO {
     public Long surveyId;
     public String prompt;
     public String answer;
+    public String responseType;
 }
