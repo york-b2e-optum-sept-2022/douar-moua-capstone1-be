@@ -3,28 +3,40 @@ POST http://localhost:8080/api/question
 Content-Type: application/json
 
 {
-  "surveyId": 24,
-  "prompt": "True or False: I is a vowel?",
-  "answer": "True",
-  "responseType": "boolean-response"
+  "surveyId": 1,
+  "prompt": "DELETE",
+  "answer": "DELETE",
+  "responseType": "booleanResponse"
 }
 
 ###
-POST http://localhost:8080/api/question/questions?surveyId=24
+POST http://localhost:8080/api/question/questions?surveyId=1
 Content-Type: application/json
 
 [
   {
-    "surveyId": 24,
-    "prompt": "survey title 7",
-    "answer": "survey title 7",
-    "responseType": "title test"
+    "surveyId": 1,
+    "prompt": "DELETE booleanResponse",
+    "answer": "True",
+    "responseType": "booleanResponse"
   },
   {
-    "surveyId": 24,
-    "prompt": "survey title 8",
-    "answer": "survey title 8",
-    "responseType": "test"
+    "surveyId": 1,
+    "prompt": "DELETE textResponse",
+    "answer": "Yes/no/hi/cool",
+    "responseType": "textResponse"
+  },
+  {
+    "surveyId": 1,
+    "prompt": "DELETE multiResponse",
+    "answer": "choice 1",
+    "responseType": "multiResponse"
+  },
+  {
+    "surveyId": 1,
+    "prompt": "DELETE",
+    "answer": "DELETE",
+    "responseType": "multiResponse"
   }
 ]
 
@@ -33,3 +45,13 @@ GET http://localhost:8080/api/question?surveyId=24
 
 ###
 DELETE http://localhost:8080/api/question?questionId=5
+
+###
+PUT http://localhost:8080/api/question
+Content-Type: application/json
+
+{
+  "id": 1,
+  "prompt": "Is G a vowel?",
+  "responseType": "booleanResponse"
+}

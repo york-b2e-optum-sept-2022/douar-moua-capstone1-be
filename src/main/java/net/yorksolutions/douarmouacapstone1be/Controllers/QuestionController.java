@@ -1,6 +1,7 @@
 package net.yorksolutions.douarmouacapstone1be.Controllers;
 
 import net.yorksolutions.douarmouacapstone1be.DTOs.NewQuestionRequestDTO;
+import net.yorksolutions.douarmouacapstone1be.DTOs.UpdateQuestionRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.Entities.Question;
 import net.yorksolutions.douarmouacapstone1be.Services.QuestionService;
 import org.springframework.web.bind.annotation.*;
@@ -34,5 +35,10 @@ public class QuestionController {
     @DeleteMapping
     public void deleteQuestion(@RequestParam Long questionId){
         this.questionService.deleteQuestion(questionId);
+    }
+
+    @PutMapping
+    public Question updateQuestion(@RequestBody UpdateQuestionRequestDTO requestDTO){
+        return this.questionService.updateQuestion(requestDTO);
     }
 }

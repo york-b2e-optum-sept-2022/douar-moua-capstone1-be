@@ -3,8 +3,8 @@ POST http://localhost:8080/api/survey
 Content-Type: application/json
 
 {
-  "id": 24,
-  "title": "delete test"
+  "id": 1,
+  "title": "DELETE TESTING"
 }
 
 ###
@@ -21,6 +21,6 @@ PUT http://localhost:8080/api/survey
 Content-Type: application/json
 
 {
-  "id": 24,
+  "id": 20,
   "title": "vowels"
 }

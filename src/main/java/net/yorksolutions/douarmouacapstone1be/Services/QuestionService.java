@@ -1,6 +1,7 @@
 package net.yorksolutions.douarmouacapstone1be.Services;
 
 import net.yorksolutions.douarmouacapstone1be.DTOs.NewQuestionRequestDTO;
+import net.yorksolutions.douarmouacapstone1be.DTOs.UpdateQuestionRequestDTO;
 import net.yorksolutions.douarmouacapstone1be.Entities.Question;
 import net.yorksolutions.douarmouacapstone1be.Entities.Survey;
 import net.yorksolutions.douarmouacapstone1be.Repositories.QuestionRepository;
@@ -59,5 +60,18 @@ public class QuestionService {
 
     public void deleteQuestion (Long questionId){
         this.questionRepository.deleteById(questionId);
+    }
+
+    public Question updateQuestion(UpdateQuestionRequestDTO requestDTO){
+        Optional<Question> questionOptional = this.questionRepository.findById(requestDTO.id);
+        if (questionOptional.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        Question updateQuestion = questionOptional.get();
+        updateQuestion.setPrompt(requestDTO.prompt);
+        updateQuestion.setResponseType(requestDTO.responseType);
+
+        return this.questionRepository.save(updateQuestion);
     }
 }
