@@ -25,4 +25,9 @@ public class ResponseController {
     public Iterable<Response> getAllResponses(){
         return this.responseService.getAllResponses();
     }
+
+    @GetMapping
+    public Response getResponse(@RequestParam Long responseId){
+        return this.responseService.getResponse(responseId);
+    }
 }

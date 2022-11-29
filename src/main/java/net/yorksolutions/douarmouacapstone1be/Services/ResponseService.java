@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Optional;
+
 @Service
 public class ResponseService {
 
@@ -30,5 +32,12 @@ public class ResponseService {
         return this.responseRepository.findAll();
     }
 
+    public Response getResponse(Long responseId){
+        Optional<Response> responseOptional = this.responseRepository.findById(responseId);
+        if (responseOptional.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return responseOptional.get();
+    }
 
 }

@@ -12,3 +12,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8080/api/response/all-responses
+
+###
+GET http://localhost:8080/api/response?responseId=8
