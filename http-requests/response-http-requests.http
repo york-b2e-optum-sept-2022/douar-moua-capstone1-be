@@ -1,0 +1,11 @@
+###
+POST http://localhost:8080/api/response
+Content-Type: application/json
+
+{
+  "answer": "true",
+  "surveyId": 1,
+  "surveyTitle": "testing",
+  "questionId": 3,
+  "question": "DELETE"
+}
