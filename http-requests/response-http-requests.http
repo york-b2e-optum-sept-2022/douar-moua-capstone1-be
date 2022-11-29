@@ -11,6 +11,38 @@ Content-Type: application/json
   "instance": 1
 }
 
+
+###
+POST http://localhost:8080/api/response/add-responses
+Content-Type: application/json
+
+[
+  {
+    "answer": "False",
+    "surveyId": 1669666914332,
+    "surveyTitle": "Vowels",
+    "questionId": 1,
+    "question": "Which letter is a vowel?",
+    "instance": 90
+  },
+  {
+    "answer": "False",
+    "surveyId": 1669666914332,
+    "surveyTitle": "Vowels",
+    "questionId": 1,
+    "question": "Which letter is a vowel?",
+    "instance": 90
+  },
+  {
+    "answer": "False",
+    "surveyId": 1669666914332,
+    "surveyTitle": "Vowels",
+    "questionId": 1,
+    "question": "Which letter is a vowel?",
+    "instance": 90
+  }
+]
+
 ###
 GET http://localhost:8080/api/response/all-responses
 
@@ -18,4 +50,4 @@ GET http://localhost:8080/api/response/all-responses
 GET http://localhost:8080/api/response?responseId=10
 
 ###
-GET http://localhost:8080/api/response/instance?instance=1
+GET http://localhost:8080/api/response/instance?instance=90

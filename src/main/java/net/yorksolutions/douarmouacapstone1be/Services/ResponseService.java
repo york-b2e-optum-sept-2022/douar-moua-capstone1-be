@@ -1,7 +1,9 @@
 package net.yorksolutions.douarmouacapstone1be.Services;
 
 import net.yorksolutions.douarmouacapstone1be.DTOs.NewResponseRequestDTO;
+import net.yorksolutions.douarmouacapstone1be.Entities.Question;
 import net.yorksolutions.douarmouacapstone1be.Entities.Response;
+import net.yorksolutions.douarmouacapstone1be.Entities.Survey;
 import net.yorksolutions.douarmouacapstone1be.Repositories.ResponseRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -42,6 +44,13 @@ public class ResponseService {
 
     public Iterable<Response> getAllResponseByInstance(Long instance){
         return this.responseRepository.findAllByInstance(instance);
+    }
+
+    public Iterable<Response> addResponses(Iterable<Response> responses){
+        try {return this.responseRepository.saveAll(responses);
+        } catch (RuntimeException exception){
+            throw new ResponseStatusException(HttpStatus.CONFLICT);
+        }
     }
 
 }
