@@ -9,4 +9,6 @@ public interface ResponseRepository extends CrudRepository<Response, Long> {
 
     Iterable<Response> findAllBySurveyId(Long surveyId);
 
+    Iterable<Response> findAllByInstance(Long instance);
+
 }

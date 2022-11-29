@@ -23,12 +23,15 @@ public class Response {
     Long questionId;
     String question;
 
-    public Response(String answer, Long surveyId, String surveyTitle, Long questionId, String question) {
+    Long instance;
+
+    public Response(String answer, Long surveyId, String surveyTitle, Long questionId, String question, Long instance) {
         this.answer = answer;
         this.surveyId = surveyId;
         this.surveyTitle = surveyTitle;
         this.questionId = questionId;
         this.question = question;
+        this.instance = instance;
     }
 
     public Long getId() {
@@ -73,5 +76,13 @@ public class Response {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public Long getInstance() {
+        return instance;
+    }
+
+    public void setInstance(Long instance) {
+        this.instance = instance;
     }
 }

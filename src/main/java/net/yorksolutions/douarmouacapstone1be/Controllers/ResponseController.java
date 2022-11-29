@@ -30,4 +30,9 @@ public class ResponseController {
     public Response getResponse(@RequestParam Long responseId){
         return this.responseService.getResponse(responseId);
     }
+
+    @GetMapping("/instance")
+    public Iterable<Response> getAllResponseByInstance(@RequestParam Long instance){
+        return this.responseService.getAllResponseByInstance(instance);
+    }
 }

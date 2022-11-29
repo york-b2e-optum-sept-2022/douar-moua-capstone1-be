@@ -6,4 +6,5 @@ public class NewResponseRequestDTO {
     public String surveyTitle;
     public Long questionId;
     public String question;
+    public Long instance;
 }

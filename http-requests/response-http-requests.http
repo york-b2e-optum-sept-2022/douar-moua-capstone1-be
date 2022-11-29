@@ -3,15 +3,19 @@ POST http://localhost:8080/api/response
 Content-Type: application/json
 
 {
-  "answer": "true",
-  "surveyId": 1,
-  "surveyTitle": "testing",
-  "questionId": 3,
-  "question": "DELETE"
+  "answer": "False",
+  "surveyId": 1669666914332,
+  "surveyTitle": "Vowels",
+  "questionId": 1,
+  "question": "Which letter is a vowel?",
+  "instance": 1
 }
 
 ###
 GET http://localhost:8080/api/response/all-responses
 
 ###
-GET http://localhost:8080/api/response?responseId=8
+GET http://localhost:8080/api/response?responseId=10
+
+###
+GET http://localhost:8080/api/response/instance?instance=1
