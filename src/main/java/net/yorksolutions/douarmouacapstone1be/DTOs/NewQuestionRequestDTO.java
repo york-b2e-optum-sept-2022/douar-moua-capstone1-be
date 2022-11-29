@@ -5,4 +5,5 @@ public class NewQuestionRequestDTO {
     public String prompt;
     public String answer;
     public String responseType;
+    public Long questionOrder;
 }

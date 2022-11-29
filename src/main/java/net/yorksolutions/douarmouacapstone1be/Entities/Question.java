@@ -1,6 +1,7 @@
 package net.yorksolutions.douarmouacapstone1be.Entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Question {
@@ -15,14 +16,16 @@ public class Question {
     String answer;
     String responseType;
 
+    Long questionOrder;
+
     @ManyToOne
-//            @JoinColumn(name = "surveyOwner_id")
     Survey surveyOwner;
 
-    public Question(String prompt, String answer, String responseType, Survey surveyOwner) {
+    public Question(String prompt, String answer, String responseType, Long questionOrder, Survey surveyOwner) {
         this.prompt = prompt;
         this.answer = answer;
         this.responseType = responseType;
+        this.questionOrder = questionOrder;
         this.surveyOwner = surveyOwner;
     }
 
@@ -52,6 +55,14 @@ public class Question {
 
     public void setResponseType(String responseType) {
         this.responseType = responseType;
+    }
+
+    public Long getQuestionOrder() {
+        return questionOrder;
+    }
+
+    public void setQuestionOrder(Long questionOrder) {
+        this.questionOrder = questionOrder;
     }
 
     public Survey getSurveyOwner() {

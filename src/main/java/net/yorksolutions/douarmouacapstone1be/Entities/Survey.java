@@ -15,13 +15,13 @@ public class Survey {
 
     String title;
 
-    @OneToMany
-    List<Question> surveyQuestions;
+//    @OneToMany
+//    List<Question> surveyQuestions;
 
-    public Survey(Long id, String title, List<Question> surveyQuestions) {
+    public Survey(Long id, String title) {
         this.id = id;
         this.title = title;
-        this.surveyQuestions = null;
+//        this.surveyQuestions = null;
     }
 
     public Long getId() {
@@ -40,19 +40,12 @@ public class Survey {
         this.title = title;
     }
 
-    public List<Question> getSurveyQuestions() {
-        return surveyQuestions;
-    }
+//    public List<Question> getSurveyQuestions() {
+//        return surveyQuestions;
+//    }
+//
+//    public void setSurveyQuestions(List<Question> surveyQuestions) {
+//        this.surveyQuestions = surveyQuestions;
+//    }
 
-    public void setSurveyQuestions(List<Question> surveyQuestions) {
-        this.surveyQuestions = surveyQuestions;
-    }
-
-    @Override
-    public String toString() {
-        return "Survey{" +
-                "title='" + title + '\'' +
-                ", surveyQuestions=" + surveyQuestions +
-                '}';
-    }
 }

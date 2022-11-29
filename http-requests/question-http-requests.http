@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
   "surveyId": 1,
-  "prompt": "DELETE",
-  "answer": "DELETE",
-  "responseType": "booleanResponse"
+  "prompt": "testing",
+  "responseType": "booleanResponse",
+  "questionOrder": 2
 }
 
 ###

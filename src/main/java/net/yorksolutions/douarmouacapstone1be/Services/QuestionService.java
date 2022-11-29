@@ -30,7 +30,7 @@ public class QuestionService {
         }
 
         return this.questionRepository.save(
-                new Question(requestDTO.prompt, requestDTO.answer, requestDTO.responseType, surveyOptional.get())
+                new Question(requestDTO.prompt, requestDTO.answer, requestDTO.responseType, requestDTO.questionOrder, surveyOptional.get())
         );
     }
 

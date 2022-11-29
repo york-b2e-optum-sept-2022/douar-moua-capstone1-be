@@ -26,7 +26,9 @@ public class SurveyService {
     public Survey createSurvey(NewSurveyRequestDTO requestDTO){
         try {
             return this.surveyRepository.save(
-                    new Survey(requestDTO.id, requestDTO.title, requestDTO.surveyQuestions)
+//                    new Survey(requestDTO.id, requestDTO.title, requestDTO.surveyQuestions)
+                    new Survey(requestDTO.id, requestDTO.title)
+
             );
         } catch (RuntimeException exception) {
             throw new ResponseStatusException(HttpStatus.CONFLICT);
