@@ -20,4 +20,9 @@ public class ResponseController {
     public Response addResponse(@RequestBody NewResponseRequestDTO requestDTO){
         return this.responseService.addResponse(requestDTO);
     }
+
+    @GetMapping("/all-responses")
+    public Iterable<Response> getAllResponses(){
+        return this.responseService.getAllResponses();
+    }
 }

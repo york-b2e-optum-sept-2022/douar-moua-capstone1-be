@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ResponseRepository extends CrudRepository<Response, Long> {
+
+    Iterable<Response> findAllBySurveyId(Long surveyId);
+
 }

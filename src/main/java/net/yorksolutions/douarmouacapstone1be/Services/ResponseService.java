@@ -26,5 +26,9 @@ public class ResponseService {
         }
     }
 
+    public Iterable<Response> getAllResponses(){
+        return this.responseRepository.findAll();
+    }
+
 
 }

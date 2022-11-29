@@ -9,3 +9,6 @@ Content-Type: application/json
   "questionId": 3,
   "question": "DELETE"
 }
+
+###
+GET http://localhost:8080/api/response/all-responses
