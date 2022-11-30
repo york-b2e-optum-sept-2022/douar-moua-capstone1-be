@@ -51,3 +51,6 @@ GET http://localhost:8080/api/response?responseId=10
 
 ###
 GET http://localhost:8080/api/response/instance?instance=90
+
+###
+DELETE http://localhost:8080/api/response?instance=90

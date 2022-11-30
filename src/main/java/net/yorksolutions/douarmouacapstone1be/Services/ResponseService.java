@@ -53,4 +53,12 @@ public class ResponseService {
         }
     }
 
+    public void deleteResponses(Long instance){
+        Iterable<Response> responses = this.responseRepository.findAllByInstance(instance);
+        try{
+            this.responseRepository.deleteAll(responses);
+        } catch (RuntimeException exception){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
 }

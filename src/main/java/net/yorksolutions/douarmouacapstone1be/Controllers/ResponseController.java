@@ -40,4 +40,9 @@ public class ResponseController {
     public Iterable<Response> getAllResponseByInstance(@RequestParam Long instance){
         return this.responseService.getAllResponseByInstance(instance);
     }
+
+    @DeleteMapping
+    public void deleteResponses(@RequestParam Long instance){
+        this.responseService.deleteResponses(instance);
+    }
 }
